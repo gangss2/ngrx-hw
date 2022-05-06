@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
   DecrementandoContador,
+  DefinirContador,
   IAppState,
   IncrementaContador,
 } from 'src/app/+state/app.state';
@@ -22,5 +23,10 @@ export class TodoComponent implements OnInit {
 
   decrementar() {
     this.store.dispatch(DecrementandoContador());
+  }
+
+  definirContador(valor: string) {
+    let vT = parseInt(valor);
+    this.store.dispatch(DefinirContador({ payload: vT }));
   }
 }

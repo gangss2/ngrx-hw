@@ -1,4 +1,4 @@
-import { createAction, createReducer, on } from '@ngrx/store';
+import { createAction, createReducer, on, props } from '@ngrx/store';
 
 export interface IAppState {
   counter: number;
@@ -14,6 +14,10 @@ export const IncrementaContador = createAction(
 export const DecrementandoContador = createAction(
   ' [ Contador ] Decrementando contador'
 );
+export const DefinirContador = createAction(
+  ' [ Contador ] Definindo Contador ',
+  props<{ payload: number }>()
+);
 
 export const appReducer = createReducer(
   appInitialState,
@@ -28,6 +32,13 @@ export const appReducer = createReducer(
     state = {
       ...state,
       counter: state.counter - 1,
+    };
+    return state;
+  }),
+  on(DefinirContador, (state, { payload }) => {
+    state = {
+      ...state,
+      counter: payload,
     };
     return state;
   })
