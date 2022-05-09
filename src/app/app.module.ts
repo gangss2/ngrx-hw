@@ -1,3 +1,4 @@
+import { modalReducer } from './+state/modal.state';
 import { appReducer } from './+state/app.state';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,19 +11,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TodoComponent } from './components/todo/todo.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { BotaoComponent } from './components/botao/botao.component';
+import { BotaoEventsComponent } from './components/botao-events/botao-events.component';
+import { BotaoNgrxComponent } from './components/botao-ngrx/botao-ngrx.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContadorComponent,
     TodoComponent,
-    BotaoComponent
+    BotaoEventsComponent,
+    BotaoNgrxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ app: appReducer }),
+    StoreModule.forRoot({ app: appReducer, appM: modalReducer }),
     NgbModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],

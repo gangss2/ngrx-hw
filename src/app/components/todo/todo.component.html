@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-5">
   <div class="row">
     <div class="col-4 text-center mt-5 w-25 mx-auto">
       <img
@@ -51,14 +51,49 @@
   </div>
 
   <hr />
+  <div class="row">
+    <div class="col">
+      <div class="d-grid mt-2 w-50 mx-auto">
+        Botão com evento:
+        <app-botao-events class="text-center d-grid"
+          >Click => Events => Alert</app-botao-events
+        >
+      </div>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col">
       <div class="d-grid mt-2 w-50 mx-auto">
-        <app-botao class="text-center"
-          >Sou só um botão que aciona uma modal em outro componente!</app-botao
+        Botão com NgRx:
+        <app-botao-ngrx class="text-center d-grid"
+          >Click => NgRx => Modal</app-botao-ngrx
         >
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-light"
+      (click)="modal.close('Close click')"
+    >
+      Close
+    </button>
+  </div>
+</ng-template>

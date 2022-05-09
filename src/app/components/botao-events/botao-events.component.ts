@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-botao',
-  templateUrl: './botao.component.html',
-  styleUrls: ['./botao.component.scss']
+  selector: 'app-botao-events',
+  templateUrl: './botao-events.component.html',
+  styleUrls: ['./botao-events.component.scss']
 })
-export class BotaoComponent implements OnInit {
+export class BotaoEventsComponent implements OnInit {
 
   private evento: Event = new CustomEvent('app-botao-handler', { detail: "Fui apertado!" });
 
