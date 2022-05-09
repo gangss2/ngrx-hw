@@ -1,47 +1,39 @@
 <div class="container">
-  <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4 text-center mt-5">
-      <img
-        class="mx-auto d-block"
-        src="assets/ngrx-logo.svg"
-        alt=""
-        width="200"
-      />
-      <h5 class="mt-2">NgRx - Helloword</h5>
+    <div class="row">
+        <div class="col-4 text-center mt-5 w-25 mx-auto">
+            <img class="mx-auto d-block" src="assets/ngrx-logo.svg" alt="" width="200" />
+            <h5 class="mt-2">NgRx - Helloword</h5>
+        </div>
     </div>
-    <div class="col-4"></div>
-  </div>
-  <div class="m-3">
-    <app-contador></app-contador>
-  </div>
-  <div class="row">
-    <div class="col-4"></div>
-    <div class="d-grid col-2">
-      <button class="btn btn-primary" (click)="incrementar()">
+
+    <div class="row">
+        <div class="w-50 mx-auto">
+            <div class="my-3 mx-1">
+                <app-contador></app-contador>
+            </div>
+        </div>
+    </div>
+
+    <div class="row w-50 mx-auto">
+        <!-- <div class="w-50 mx-auto"> -->
+        <div class="d-grid col">
+            <button class="btn btn-primary" (click)="incrementar()">
         Incrementar
       </button>
+        </div>
+        <div class="d-grid col">
+            <button class="btn btn-primary" (click)="decrementar()">
+            Decrementar
+          </button>
+        </div>
+        <!--</div> -->
     </div>
-    <div class="d-grid col-2">
-      <button class="btn btn-primary" (click)="decrementar()">
-        Decrementar
-      </button>
-    </div>
-    <div class="col-4"></div>
-  </div>
-  <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4 d-grid gap-2 mt-2">
-      <input
-        #frm
-        type="number"
-        class="form-control"
-        placeholder="Definir contador"
-      />
-      <button class="btn btn-primary" (click)="definirContador(frm.value)">
+    <div class="row">
+        <div class="col-4 d-grid gap-2 mt-2 w-50 mx-auto">
+            <input #frm type="number" class="form-control" placeholder="Definir contador" />
+            <button class="btn btn-primary" (click)="definirContador(frm.value)">
         Definir
       </button>
+        </div>
     </div>
-    <div class="col-4"></div>
-  </div>
 </div>

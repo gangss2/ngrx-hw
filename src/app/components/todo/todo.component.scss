@@ -1,0 +1,16 @@
+.bg-see {
+    background-color: red;
+    .bg-see {
+        background-color: cyan;
+        .bg-see {
+            background-color: pink;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .w-50,
+    .w-25 {
+        width: 100% !important;
+    }
+}
