@@ -10,12 +10,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TodoComponent } from './components/todo/todo.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { BotaoComponent } from './components/botao/botao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContadorComponent,
-    TodoComponent
+    TodoComponent,
+    BotaoComponent
   ],
   imports: [
     BrowserModule,
