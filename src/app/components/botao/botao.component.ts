@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotaoComponent implements OnInit {
 
+  private evento: Event = new CustomEvent('app-botao-handler', { detail: "Fui apertado!" });
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
+  apertado() {
+    window.dispatchEvent(this.evento);
+  }
 }

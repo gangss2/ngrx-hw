@@ -15,7 +15,11 @@ import {
 export class TodoComponent implements OnInit {
   constructor(private store: Store<{ app: IAppState }>) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    window.addEventListener('app-botao-handler', (e: any) => {
+      alert(`O Botão foi apertado!\n${e.detail}`);
+    });
+  }
 
   incrementar() {
     this.store.dispatch(IncrementaContador());
